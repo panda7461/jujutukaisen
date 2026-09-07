@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>呪力バトル -CURSE BATTLE-</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+
+    <!-- タイトル画面 -->
+    <section id="screen-title" class="screen active">
+      <h1 class="title">呪力バトル<br><span class="subtitle">-CURSE BATTLE-</span></h1>
+      <p class="lead">呪術師となり、押し寄せる呪霊の波を打ち払え。<br>呪力ゲージを溜めて「領域展開」を解き放て。</p>
+      <button id="btn-start" class="btn-primary">はじめる</button>
+      <p class="credit">Original fan game / オリジナル二次創作ゲーム</p>
+    </section>
+
+    <!-- キャラクター選択 -->
+    <section id="screen-select" class="screen">
+      <h2>呪術師を選択</h2>
+      <div id="character-list" class="character-list"></div>
+      <button id="btn-back-title" class="btn-secondary">戻る</button>
+    </section>
+
+    <!-- ゲーム画面 -->
+    <section id="screen-game" class="screen">
+      <div class="hud">
+        <div class="hud-left">
+          <div class="hp-bar-wrap">
+            <span class="hud-label">HP</span>
+            <div class="hp-bar"><div id="player-hp-fill" class="hp-fill"></div></div>
+          </div>
+          <div class="ce-bar-wrap">
+            <span class="hud-label">呪力</span>
+            <div class="ce-bar"><div id="player-ce-fill" class="ce-fill"></div></div>
+          </div>
+        </div>
+        <div class="hud-center">
+          <span id="wave-label">WAVE 1</span>
+        </div>
+        <div class="hud-right">
+          <span id="score-label">SCORE: 0</span>
+        </div>
+      </div>
+      <canvas id="game-canvas" width="800" height="480"></canvas>
+      <p class="controls-hint">
+        移動: ← → ↑ ↓ / WASD &nbsp;|&nbsp; 攻撃: Space &nbsp;|&nbsp; 領域展開: X (呪力満タン時)
+      </p>
+    </section>
+
+    <!-- リザルト画面 -->
+    <section id="screen-result" class="screen">
+      <h2 id="result-title">GAME OVER</h2>
+      <p id="result-detail"></p>
+      <button id="btn-retry" class="btn-primary">もう一度挑む</button>
+      <button id="btn-title" class="btn-secondary">タイトルへ</button>
+    </section>
+
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
