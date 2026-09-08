@@ -44,9 +44,26 @@
           <span id="score-label">SCORE: 0</span>
         </div>
       </div>
-      <canvas id="game-canvas" width="800" height="480"></canvas>
+      <div class="canvas-wrap">
+        <canvas id="game-canvas" width="800" height="480"></canvas>
+
+        <!-- スマホ用タッチコントロール -->
+        <div id="touch-controls" class="touch-controls">
+          <div class="dpad" aria-hidden="true">
+            <button type="button" class="dpad-btn dpad-up" data-key="arrowup">▲</button>
+            <button type="button" class="dpad-btn dpad-left" data-key="arrowleft">◀</button>
+            <button type="button" class="dpad-btn dpad-right" data-key="arrowright">▶</button>
+            <button type="button" class="dpad-btn dpad-down" data-key="arrowdown">▼</button>
+          </div>
+          <div class="action-buttons">
+            <button type="button" id="btn-touch-special" class="action-btn special-btn" data-key="x">領域<br>展開</button>
+            <button type="button" id="btn-touch-attack" class="action-btn attack-btn" data-key=" ">攻撃</button>
+          </div>
+        </div>
+      </div>
       <p class="controls-hint">
-        移動: ← → ↑ ↓ / WASD &nbsp;|&nbsp; 攻撃: Space &nbsp;|&nbsp; 領域展開: X (呪力満タン時)
+        PC: 移動 ← → ↑ ↓ / WASD &nbsp;|&nbsp; 攻撃 Space &nbsp;|&nbsp; 領域展開 X (呪力満タン時)<br>
+        スマホ: 左の十字キーで移動 &nbsp;|&nbsp; 右のボタンで攻撃・領域展開
       </p>
     </section>
 

@@ -170,6 +170,24 @@
     return names.some((n) => keys.has(n));
   }
 
+  // スマホ用タッチコントロール: ボタンの押下状態をキーボードと同じ `keys` に反映する
+  document.querySelectorAll("#touch-controls [data-key]").forEach((btn) => {
+    const key = btn.dataset.key;
+    const press = (e) => {
+      e.preventDefault();
+      keys.add(key);
+    };
+    const release = (e) => {
+      e.preventDefault();
+      keys.delete(key);
+    };
+    btn.addEventListener("pointerdown", press);
+    btn.addEventListener("pointerup", release);
+    btn.addEventListener("pointercancel", release);
+    btn.addEventListener("pointerleave", release);
+    btn.addEventListener("contextmenu", (e) => e.preventDefault());
+  });
+
   // ---------------------------------------------------------------------
   // ゲーム状態
   // ---------------------------------------------------------------------
